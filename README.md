@@ -9,7 +9,7 @@ Make sure you add the bot the desired channel. The Slack channel can be overwrit
 
 ## Speakers
 
-Check out the (speaker_id_samples.zip)[speaker_id_samples.zip] to find out the difference between the various speaker_id options of the [Coqui VITS](https://tts.readthedocs.io/en/latest/models/vits.html) model.
+Check out the [speaker_id_samples.zip](speaker_id_samples.zip) to find out the difference between the various speaker_id options of the [Coqui VITS](https://tts.readthedocs.io/en/latest/models/vits.html) model.
 
 ### Pipeline
 
