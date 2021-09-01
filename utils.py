@@ -6,7 +6,7 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
 
-channel = "#pipeline-exploration"
+channel = os.getenv("SLACK_CHANNEL", "#general")
 
 
 def generate_audio_file(text, path, speaker="p228"):
