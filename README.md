@@ -17,7 +17,7 @@ Check out the [speaker_id_samples.zip](speaker_id_samples.zip) to find out the d
 
 ## History of TTS models
 
-The VITS model that's used is based off of earlier work in the field. For an overview of the evolution check out the evolution trajectories below;
+The VITS model that's used is based off of earlier work in the field. For an overview of the evolution check out the evolution trajectories below:
 
 ![Evolution of TTS models](tts-history.png)
 
