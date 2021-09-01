@@ -6,6 +6,11 @@ If you want to send this to your actual Slack channel you need a bot with chat:r
 
 Make sure you add the bot the desired channel. The Slack channel can be overwritten by specifying the `SLACK_CHANNEL` environment variable.
 
+
+## Speakers
+
+Check out the `speaker_id_samples.zip` to find out the difference between the various speaker_id options of the [Coqui VITS](https://tts.readthedocs.io/en/latest/models/vits.html) model.
+
 ### Pipeline
 
 ![Pipeline visualization](https://pviz.orchest.io/?pipeline=https://github.com/ricklamers/orchest-coqui-tts/blob/main/main.orchest)
