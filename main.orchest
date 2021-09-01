@@ -1,0 +1,73 @@
+{
+    "name": "Main",
+    "parameters": {},
+    "settings": {
+        "auto_eviction": false,
+        "data_passing_memory_size": "1GB"
+    },
+    "steps": {
+        "401d5417-cd64-4519-9574-7919a21b5c28": {
+            "environment": "81cf46ae-30f6-498e-a857-14de21b9f4d0",
+            "file_path": "generate-text.ipynb",
+            "incoming_connections": [],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    159.5,
+                    269.5
+                ]
+            },
+            "parameters": {},
+            "title": "Generate text",
+            "uuid": "401d5417-cd64-4519-9574-7919a21b5c28"
+        },
+        "a235216f-ee80-49c8-94c8-423e66a9a054": {
+            "environment": "81cf46ae-30f6-498e-a857-14de21b9f4d0",
+            "file_path": "send-audio-file.ipynb",
+            "incoming_connections": [
+                "a895253b-f3ad-4c9c-8918-3bedbcbdc964"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    701.5,
+                    269.5
+                ]
+            },
+            "parameters": {},
+            "title": "Send audio file",
+            "uuid": "a235216f-ee80-49c8-94c8-423e66a9a054"
+        },
+        "a895253b-f3ad-4c9c-8918-3bedbcbdc964": {
+            "environment": "81cf46ae-30f6-498e-a857-14de21b9f4d0",
+            "file_path": "generate-audio-file.ipynb",
+            "incoming_connections": [
+                "401d5417-cd64-4519-9574-7919a21b5c28"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    439.5,
+                    269.5
+                ]
+            },
+            "parameters": {},
+            "title": "Generate audio file",
+            "uuid": "a895253b-f3ad-4c9c-8918-3bedbcbdc964"
+        }
+    },
+    "uuid": "2b239b25-196b-4d59-8dde-e855128e08d4",
+    "version": "1.0.0"
+}
