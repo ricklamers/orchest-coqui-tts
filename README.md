@@ -15,3 +15,10 @@ Check out the [speaker_id_samples.zip](speaker_id_samples.zip) to find out the d
 
 ![Pipeline visualization](https://pviz.orchest.io/?pipeline=https://github.com/ricklamers/orchest-coqui-tts/blob/main/main.orchest)
 
+## History of TTS models
+
+The VITS model that's used is based off of earlier work in the field. For an overview of the evolution check out the evolution trajectories below;
+
+![Evolution of TTS models](tts-history.png)
+
+For more details check out the paper about recent advancements in neural speech synthesis: [arxiv.org/abs/2106.15561](https://arxiv.org/abs/2106.15561)
