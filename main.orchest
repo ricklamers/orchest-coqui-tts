@@ -42,7 +42,12 @@
                     269.5
                 ]
             },
-            "parameters": {},
+            "parameters": {
+                "platforms": [
+                    "discord",
+                    "slack"
+                ]
+            },
             "title": "Send audio file",
             "uuid": "a235216f-ee80-49c8-94c8-423e66a9a054"
         },

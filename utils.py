@@ -2,13 +2,17 @@ import os
 import uuid
 import shlex
 import subprocess
-from discord.ext import commands
+import asyncio
+import discord
+import nest_asyncio
+import sys
+
+from multiprocessing import Process
+
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
-
 channel = os.getenv("SLACK_CHANNEL", "#general")
-
 
 def generate_audio_file(text, path, speaker="p228"):
     command = "tts --text %s --model_name 'tts_models/en/vctk/vits' --out_path %s --speaker_idx %s" % (shlex.quote(text), shlex.quote(path), speaker)
@@ -42,17 +46,31 @@ def send_slack_file(file_path, title):
         assert e.response["ok"] is False
         assert e.response["error"]  # str like 'invalid_auth', 'channel_not_found'
         print(f"Got an error: {e.response['error']}")
-
-               
         
+
+def _send_discord_file(file_path, title):
+    
+    discord_channel = int(os.getenv("DISCORD_CHANNEL_ID", "0"))
+    client = discord.Client()
+
+    async def my_background_task():
+        await client.wait_until_ready()
+        channel = client.get_channel(id=discord_channel) # replace with channel_id
+        await channel.send(title, file=discord.File(file_path))
+        await client.close()
+    
+    client.loop.create_task(my_background_task())
+    
+    try:
+        client.run(os.environ['DISCORD_BOT_TOKEN'])
+    except Exception as e:
+        pass
+
+
 def send_discord_file(file_path, title):
-    client = commands.Bot(command_prefix='.')
     
-    @client.event
-    async def on_ready():
-        print("Running")
+    nest_asyncio.apply()
     
-    @client.command(pass_context=True)
-    async def send(title):
-        await title.send(file=discord.File(file_path))
-    client.run(os.environ['DISCORD_TOKEN'])
+    p = Process(target=_send_discord_file, args=(file_path, title))
+    p.start()
+    p.join()
