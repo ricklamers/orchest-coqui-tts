@@ -2,6 +2,7 @@ import os
 import uuid
 import shlex
 import subprocess
+from discord.ext import commands
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
@@ -41,3 +42,17 @@ def send_slack_file(file_path, title):
         assert e.response["ok"] is False
         assert e.response["error"]  # str like 'invalid_auth', 'channel_not_found'
         print(f"Got an error: {e.response['error']}")
+
+               
+        
+def send_discord_file(file_path, title):
+    client = commands.Bot(command_prefix='.')
+    
+    @client.event
+    async def on_ready():
+        print("Running")
+    
+    @client.command(pass_context=True)
+    async def send(title):
+        await title.send(file=discord.File(file_path))
+    client.run(os.environ['DISCORD_TOKEN'])
