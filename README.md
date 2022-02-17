@@ -1,4 +1,7 @@
 # orchest-coqui-tts
+
+[![Open in Orchest](https://github.com/orchest/orchest-examples/raw/main/imgs/open_in_orchest.svg)](https://cloud.orchest.io/?import_url=https://github.com/ricklamers/orchest-coqui-tts/)
+
 This repository demonstrates an Orchest pipeline that generates an audio fragment using the [coqui](https://github.com/coqui-ai/TTS) TTS engine and sends it as a message on Slack
 
 ## Environment variables
